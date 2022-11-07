@@ -3,11 +3,11 @@ package com.cydeo.lab06orm.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.repository.cdi.Eager;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
+import java.math.BigDecimal;
 
 
 @Setter
@@ -16,9 +16,10 @@ import javax.persistence.OneToOne;
 @NoArgsConstructor
 public class Balance extends BaseEntity{
 
-    private Long amount;
-    private String costumer_id;
+    private BigDecimal amount;
 
-    @OneToOne
-    private Costumer costumer;
+  //  private String costumer_id;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    private Customer customer;
 }
