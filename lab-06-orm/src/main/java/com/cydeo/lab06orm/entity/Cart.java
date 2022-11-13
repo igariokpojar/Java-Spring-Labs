@@ -18,10 +18,10 @@ public class Cart extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private CartState cartState;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne//(fetch = FetchType.LAZY)
     private Customer customer;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne//(fetch = FetchType.LAZY)
     private Discount discount;
 
 

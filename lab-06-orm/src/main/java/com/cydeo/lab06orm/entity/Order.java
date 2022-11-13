@@ -10,14 +10,14 @@ import java.math.BigDecimal;
 @Setter
 @Getter
 @Entity
-//@Table(name = "orders")
+@Table(name = "orders")
 @NoArgsConstructor
-public class Orders extends BaseEntity{
+public class Order extends BaseEntity{
 
      private BigDecimal paidPrice;
      private BigDecimal totalPrice;
 
-     @ManyToOne(fetch = FetchType.LAZY)
+     @ManyToOne//(fetch = FetchType.LAZY)
      private Customer customer;
 
      @OneToOne(fetch = FetchType.LAZY)

@@ -20,6 +20,6 @@ public class Balance extends BaseEntity{
 
   //  private String costumer_id;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne//(fetch = FetchType.LAZY)
     private Customer customer;
 }

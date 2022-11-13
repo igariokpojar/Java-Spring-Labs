@@ -17,12 +17,14 @@ import java.util.List;
 @NoArgsConstructor
 public class Discount extends BaseEntity{
 
+    private String name;
+
     private BigDecimal discount;
 
     @Enumerated(EnumType.STRING)
     private DiscountType discountType;
 
-    private String name;
+
 
 
 
