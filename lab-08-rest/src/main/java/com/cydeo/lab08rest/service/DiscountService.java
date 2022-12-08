@@ -1,5 +1,6 @@
 package com.cydeo.lab08rest.service;
 
+import com.cydeo.lab08rest.dto.DiscountDTO;
 import com.cydeo.lab08rest.entity.Discount;
 import com.cydeo.lab08rest.enums.DiscountType;
 
@@ -8,11 +9,11 @@ import java.util.List;
 
 public interface DiscountService {
 
-    Discount findFirstByName(String name);
+    List<DiscountDTO> getDiscountList();
 
-    List<Discount> findAllByDiscountGreaterThan(BigDecimal amount);
+    void save(DiscountDTO discountDTO);
 
-    List<Discount> findAllByDiscountType(DiscountType discountType);
+    void update(DiscountDTO discountDTO);
 
-    List<Discount> findAllByRangeBetweenAmount(BigDecimal startAmount, BigDecimal endAmount);
+    DiscountDTO retrieveDiscountByName(String name);
 }

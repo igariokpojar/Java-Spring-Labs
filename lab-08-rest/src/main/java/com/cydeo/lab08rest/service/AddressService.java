@@ -1,5 +1,6 @@
 package com.cydeo.lab08rest.service;
 
+import com.cydeo.lab08rest.dto.AddressDTO;
 import com.cydeo.lab08rest.entity.Address;
 import com.cydeo.lab08rest.entity.Customer;
 
@@ -7,15 +8,10 @@ import java.util.List;
 
 public interface AddressService {
 
-    List<Address> findAllByCustomer(Customer customer);
-
-    Address findByStreet(String street);
-
-    List<Address> findTop3ByCustomer_Email(String email);
-
-    List<Address> findAllByCustomerAndName(Customer customer, String name);
-
-    List<Address> findAllByStreetStartingWith(String keyword);
-
-    List<Address> retrieveByCustomerId(Long id);
+    List<AddressDTO> getAddressList();
+    AddressDTO save(AddressDTO addressDTO);
+    AddressDTO update(AddressDTO addressDTO);
+    List<AddressDTO> getAddressListByStartsWithAddress(String address);
+    List<AddressDTO> getAddressListByCustomerId(Long customerId);
+    List<AddressDTO> getAddressListByCustomerAndName(Long customerId, String addressName);
 }
