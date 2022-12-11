@@ -16,4 +16,6 @@ public interface OrderService {
     List<OrderDTO> getOrderListByPaymentMethod(PaymentMethod paymentMethod);
 
     List<OrderDTO> getOrderListByEmail(String email)throws Exception;
+
+    OrderDTO update(OrderDTO orderDTO);
 }

@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/v1/costumer")
+@RequestMapping("api/v1/customer")
 public class CustomerController {
 private final CustomerService customerService;
 
@@ -34,5 +34,13 @@ private final CustomerService customerService;
         customerService.save(customerDTO);
         return ResponseEntity.ok(new ResponseWrapper("Costumer are successfully created"
                 , HttpStatus.OK));
+    }
+    @GetMapping("/{email}")
+    public ResponseEntity<ResponseWrapper> getCustomerByEmail(@PathVariable("email") String email){
+
+        CustomerDTO customerDTO = customerService.retrieveByCustomerEmail(email);
+
+        return ResponseEntity.ok(new ResponseWrapper("Customer is successfully retrieved",customerDTO,HttpStatus.OK));
+
     }
 }

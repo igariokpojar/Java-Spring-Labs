@@ -14,4 +14,6 @@ public interface CustomerService {
 
     void save(CustomerDTO customerDTO);
 
+    CustomerDTO retrieveByCustomerEmail(String email);
+
 }
