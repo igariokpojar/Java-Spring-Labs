@@ -5,6 +5,7 @@ import com.cydeo.lab08rest.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface AddressRepository extends JpaRepository<Address,String> {
@@ -27,4 +28,6 @@ public interface AddressRepository extends JpaRepository<Address,String> {
     //Write a JPQL query to get all address with a specific customerId
     @Query("SELECT a FROM Address a WHERE a.customer.id = ?1")
     List<Address> retrieveByCustomerId(Long id);
+
+    List<Address> findAllByCustomerIdAndName(Long id, String name);;
 }

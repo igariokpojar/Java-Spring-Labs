@@ -2,11 +2,9 @@ package com.cydeo.lab08rest.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.context.annotation.Lazy;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -20,6 +18,6 @@ public class Order extends BaseEntity{
     private BigDecimal totalPrice;
     @ManyToOne
     private Customer customer;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL) // (cascade = CascadeType.ALL)->this is for Transient error
     private Payment payment;
 }
